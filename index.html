@@ -311,9 +311,12 @@ function startAnim(){
 
 function openNext(){
   document.getElementById("env1").classList.add("open");
-  setTimeout(()=>next('s7'),500);
+  setTimeout(()=>{
+    next('s7');
+    console.log("Moved to s7"); // debug
+  },600);
 }
-
+  
 function openShayari(){
   document.getElementById("env2").classList.add("open");
   setTimeout(()=>next('s9'),500);
