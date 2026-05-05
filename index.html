@@ -41,11 +41,9 @@ h1,h2,h3 {
 
 .screen {
   display:none;
-  height:100vh;
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  padding:20px;
 }
 
 .active { display:flex; }
@@ -181,6 +179,7 @@ input {
 </head>
 
 <body>
+  <body onload="next('s1')">
 
 <!-- S1 -->
 <div class="screen active" id="s1">
@@ -290,13 +289,17 @@ function moveNo(){
 }
 
 function next(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  let screens = document.querySelectorAll('.screen');
 
-  if(id==='s4'){
-    clearTimeout(wishTimer);
-    wishTimer=setTimeout(()=>next('s5'),5000);
+  screens.forEach(function(s){
+    s.style.display = "none";
+  });
+
+  let nextScreen = document.getElementById(id);
+  if(nextScreen){
+    nextScreen.style.display = "flex";
   }
+}
 }
 
 function startAnim(){
