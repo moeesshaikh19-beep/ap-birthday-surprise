@@ -13,6 +13,13 @@ body {
   font-family:'Poppins', sans-serif;
   text-align:center;
   overflow:hidden;
+  button {
+    position: relative;
+    z-index: 1000;
+  }
+  .photo {
+    pointer-events: none;
+  }
 }
 
 h1,h2,h3 {
@@ -54,6 +61,7 @@ button {
   color:white;
   font-weight:600;
   z-index:999;
+  <button onclick="next('s8')" style="z-index:2000; position:relative:">
 }
 
 #noBtn { position:absolute; }
@@ -172,8 +180,8 @@ input {
   <h2>Some beautiful moments </h2>
   <img src="photo1.jpg" class="photo">
   <img src="photo2.jpg" class="photo">
-  <br><br>
-  <button onclick="next('s8')">Next</button>
+  <br><br><br>
+  <button onclick="next('s8')">continue </button>
 </div>
 
 <!-- S8 -->
