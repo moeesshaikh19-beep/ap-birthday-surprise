@@ -3,283 +3,138 @@
 <head>
 <title>For Ayesha ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
 <style>
-body {
+body{
   margin:0;
-  background: linear-gradient(135deg, #7b0000, #ffffff);
-  color:#222;
-  font-family:'Poppins', sans-serif;
-  text-align:center;
+  font-family:Poppins;
+  background: linear-gradient(135deg,#7b0000,#ffffff);
   overflow:hidden;
-  button {
-    position: relative;
-    z-index: 1000;
-  }
-  .photo {
-    pointer-events: none;
-  }
 }
 
-h1,h2,h3 {
-  font-family:'Playfair Display', serif;
-  color:#7b0000;
-}
-
-/* glowing name */
-.glow {
-  font-size:32px;
-  color:#7b0000;
-  animation: glowAnim 2s ease-in-out infinite alternate;
-}
-
-@keyframes glowAnim {
-  from { text-shadow: 0 0 5px #ff4d4d; }
-  to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff6666; }
-}
-
-.screen {
+.screen{
   display:none;
+  height:100vh;
   justify-content:center;
   align-items:center;
   flex-direction:column;
+  text-align:center;
 }
 
-.active { display:flex; }
-
-button {
-  padding:12px 28px;
-  margin:12px;
+button{
+  padding:12px 25px;
   border:none;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
+  border-radius:25px;
   background:#7b0000;
   color:white;
-  font-weight:600;
-  z-index:999;
-  <button onclick="next('s8')" style="z-index:2000; position:relative:">
+  cursor:pointer;
+  margin-top:20px;
 }
 
-#noBtn { position:absolute; }
-
-input {
-  padding:12px;
-  border-radius:20px;
-  border:1px solid #ccc;
-  font-size:16px;
-}
-
-.float {
+#noBtn{
   position:absolute;
-  animation:floatUp 7s linear infinite;
-  font-size:20px;
-  opacity:0.7;
 }
 
-@keyframes floatUp {
-  100% {transform:translateY(-100vh); opacity:0;}
+.photos{
+  display:flex;
+  gap:10px;
 }
 
-.cake {
+.photo{
+  width:150px;
+  height:200px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.envelope{
   width:220px;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  height:140px;
+  background:white;
+  border-radius:10px;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
-
-.envelope {
-  width: 260px;
-  height: 160px;
-  background: #ffffff;
-  border-radius: 12px;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-  overflow: hidden;
-}
-
-/* flap */
-.envelope .flap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #f1f1f1;
-  clip-path: polygon(0 0, 50% 50%, 100% 0);
-  transform-origin: top;
-  transition: transform 0.6s ease;
-}
-
-/* letter inside */
-.envelope .letter {
-  position: absolute;
-  width: 90%;
-  height: 70%;
-  background: #fff;
-  left: 5%;
-  top: 20%;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  transform: translateY(100%);
-  transition: transform 0.6s ease;
-}
-
-/* open animation */
-.envelope.open .flap {
-  transform: rotateX(180deg);
-}
-
-.envelope.open .letter {
-  transform: translateY(-20%);
-}
-  .envelope {
-  animation: glowPulse 2s infinite ease-in-out;
-}
-
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
-  50% { box-shadow: 0 0 25px rgba(255,255,255,0.6); }
-  100% { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
-}
-
-.shayari {
-  max-width:85%;
-  line-height:1.8;
-  font-size:18px;
-  color:#222;
-}
-  .photos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.photo {
-  width: 160px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.center-btn {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-  .photos img:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
-}
-
 
 </style>
 </head>
 
-<body>
-  <body onload="next('s1')">
+<body onload="show('s1')">
 
-<!-- S1 -->
-<div class="screen active" id="s1">
-  <h2>Open this? 💌</h2>
-  <button onclick="yes()">Yes ❤️</button>
-  <button id="noBtn" onmouseover="moveNo()">No 😜</button>
+<div class="screen" id="s1">
+<h2>Open this ❤️</h2>
+<button onclick="show('s2')">Yes 💖</button>
+<button id="noBtn" onmouseover="moveNo()">No 😜</button>
 </div>
 
-<!-- S2 -->
 <div class="screen" id="s2">
-  <h1 class="glow">Happy Birthday Ayesha 🎂</h1>
-  <button onclick="next('s3')">Next</button>
+<h1>Happy Birthday Ayesha 🎂</h1>
+<button onclick="show('s3')">Next</button>
 </div>
 
-<!-- S3 -->
 <div class="screen" id="s3">
-  <img class="cake" src="cake.png">
-  <p>Make a wish ✨</p>
-  <button onclick="next('s4')">Next</button>
+<p>Make a wish ✨</p>
+<button onclick="show('s4')">Next</button>
 </div>
 
-<!-- S4 -->
 <div class="screen" id="s4">
-  <h3>Write your wish 💭</h3>
-  <input placeholder="Type here..." />
+<h3>Write your wish</h3>
+<input placeholder="Type here...">
 </div>
 
-<!-- S5 -->
 <div class="screen" id="s5">
-  <h2>
-    Tum bohot khubsurat ho ❤️<br>
-    Tum iss duniya ki har khushi deserve karti ho ✨
-  </h2>
-  <button onclick="next('s6')">Next</button>
+<h2>
+Tum bohot khubsurat ho ❤️<br>
+Tum iss duniya ki har khushi deserve karti ho ✨
+</h2>
+<button onclick="show('s6')">Next</button>
 </div>
 
-<!-- S6 -->
 <div class="screen" id="s6">
- <div class="envelope" id="env1" onclick="openNext()">
-  <div class="flap"></div>
-  <div class="letter"></div>
-    <p class="tap-text">Tap to open 💌</p>
+<div class="envelope" onclick="show('s7')">
+Tap to open 💌
+</div>
 </div>
 
-<!-- S7 -->
 <div class="screen" id="s7">
-  <h2>Some beautiful moments 💖</h2>
+<h2>Some beautiful moments 💖</h2>
 
-  <div class="photos">
-    <img src="photo1.jpg" class="photo">
-    <img src="photo2.jpg" class="photo">
-  </div>
-
-  <div class="center-btn">
-    <button onclick="next('s8')">Continue ✨</button>
-  </div>
-
+<div class="photos">
+<img src="photo1.jpg" class="photo">
+<img src="photo2.jpg" class="photo">
 </div>
 
-<!-- S8 -->
+<button onclick="show('s8')">Continue ✨</button>
+</div>
+
 <div class="screen" id="s8">
-  <div class="envelope" id="env2" onclick="openShayari()">
-  <div class="flap"></div>
-  <div class="letter"></div>
-     <p class="tap-text">Tap to open 💌</p>
+<div class="envelope" onclick="show('s9')">
+Open 💌
+</div>
 </div>
 
-<!-- S9 -->
 <div class="screen" id="s9">
-  <div class="shayari">
-  Aisa Banna Bawarna Mubarak tumhe<br><br>
-  kam se kam itna kehna humara karo…<br><br>
-  Chand Sharmayega Chandni Raat mai<br>
-  yun na Zulfon ko apni sawara karo…<br><br>
-  yeh Tabassum yeh Aariz yeh roshan zabi<br>
-  ye Adaa yeh Nigahen yeh Zulfe Hasi…<br><br>
-  Aaine ki Nazar lag na jaaye kahi<br>
-  Jaan-e-ja apna sadqa utara karo ❤️
-  </div>
-  <br><br>
-  <button onclick="next('s10')">next </button>
+<p>
+aisa banna sawarna Mubarak tumhe<br><br>
+kam se kam itna kehna humara karo<br><br>
+chand sharmayega chandni raat mai<br>
+yu na zulfon ko apni sawara karo<br><br>
+yeh tabassum yeh aariz yeh roshan zabi<br>
+yeh ada yeh nigahen yeh zulfe hasi<br><br>
+aaine ki nazar lag na jaaye kahi<br>
+jaan e ja apna sadqa utara karo ❤️
+</p>
 </div>
-  <div class="screen" id="s10">
-    <h2> Happy Birthday once again Ayesha </h2>
-    <p> Thank you for opening this... This means a lot to me </p>
-  </div>
-</div>
-
-<!-- MUSIC -->
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f1a7c01c.mp3">
-</audio>
 
 <script>
-
-let wishTimer;
-
-function yes(){
-  next('s2');
-  startAnim();
+function show(id){
+  let screens=document.querySelectorAll('.screen');
+  screens.forEach(s=>s.style.display="none");
+  document.getElementById(id).style.display="flex";
 }
 
 function moveNo(){
@@ -287,45 +142,6 @@ function moveNo(){
   btn.style.top=Math.random()*80+"vh";
   btn.style.left=Math.random()*80+"vw";
 }
-
-function next(id){
-  let screens = document.querySelectorAll('.screen');
-
-  screens.forEach(function(s){
-    s.style.display = "none";
-  });
-
-  let nextScreen = document.getElementById(id);
-  if(nextScreen){
-    nextScreen.style.display = "flex";
-  }
-}
-}
-
-function startAnim(){
-  setInterval(()=>{
-    let el=document.createElement("div");
-    el.className="float";
-    el.innerHTML=["💖","✨","🎈"][Math.floor(Math.random()*3)];
-    el.style.left=Math.random()*100+"vw";
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),7000);
-  },400);
-}
-
-function openNext(){
-  document.getElementById("env1").classList.add("open");
-  setTimeout(()=>{
-    next('s7');
-    console.log("Moved to s7"); // debug
-  },600);
-}
-  
-function openShayari(){
-  document.getElementById("env2").classList.add("open");
-  setTimeout(()=>next('s9'),500);
-}
-
 </script>
 
 </body>
